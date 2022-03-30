@@ -20,17 +20,17 @@ const app = express()
 client.setConfig({
   apiKey: "4885e419d5c905804f45921a1dba9856-us1",
   server: "us1",
-});
+}); 
 
 //body parser urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
 //in order to connect css file to the html page in different places
-app.use(express.static("public"))
+app.use(express.static(__dirname + "/public")) 
 
 //listen to the port 
 app.listen(process.env.PORT || port, function(){
-  console.log(`Server is running... `)
+  console.log(`Server has been started successfully.`)
 })
 
 //get method to make the html page run on the server
